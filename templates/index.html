@@ -5,9 +5,24 @@
 {% block content %}
     <h1>Articles</h1>
 
-    {% for article in article_list %}
+    {% for article in articlelist.object_list %}
         <p>Headline : {{ article.headline }}</p>
         <p>By {{ article.reporter.full_name }}</p>
         <p>Published {{ article.pub_date|date:"F j, Y" }}</p>
+        <br />
     {% endfor %}
+    {% if articlelist.has_previous %}
+        <a href="?page={{ articlelist.previous_page_number }}" title="下一页">上一页</a>&nbsp;
+    {% endif %}
+    {% for p in page_range %}
+        {% ifequal p articlelist.number %}
+            <span>{{p}}</span>
+        {% else %}
+            <a href="?page={{p}}" title="第{{p}}页">{{p}}</a>
+        {% endifequal %}
+    {% endfor %}
+    &nbsp;
+    {% if articlelist.has_next %}
+        <a href="?page={{ articlelist.next_page_number }}" title="下一页">下一页</a>&nbsp;
+    {% endif %}
 {% endblock %}

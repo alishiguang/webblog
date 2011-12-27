@@ -1,4 +1,4 @@
-#-*- coding:utf-8 -*-
+
 __author__ = 'Lishiguang'
 
 from django.contrib import admin

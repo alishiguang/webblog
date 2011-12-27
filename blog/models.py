@@ -4,10 +4,8 @@ from django.db import models
 class Reporter(models.Model):
     full_name = models.CharField(max_length=70)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.full_name
-    class Admin:
-        pass
 
 class Article(models.Model):
     pub_date = models.DateTimeField()
@@ -15,7 +13,5 @@ class Article(models.Model):
     article = models.TextField()
     reporter = models.ForeignKey(Reporter)
 
-    def __str__(self):
-        return self.headline
-    class Admin:
-        pass
+    def __unicode__(self):
+        return '%s %s' % (self.headline,self.article)
