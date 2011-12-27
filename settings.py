@@ -68,7 +68,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'webblog.urls'
 
-TEMPLATE_DIRS = ('D:/pworkspace/webblog/templates',)
+TEMPLATE_DIRS = ('F:/pworkspace/webblog/templates',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',

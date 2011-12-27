@@ -3,14 +3,19 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+{% else %}
+    <p>Welcome, new user. Please log in.</p>
+{% endif %}
 <hr>
-dd
+这只是个开始
 <hr>
 
 {% block content %}{% endblock %}
 <hr>
 ……………………………………………………………………………………
-有些事情永远都不会明白,有些事情做好不要明白.
+这并没有结束
 <hr>
 </body>
 </html>
