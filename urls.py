@@ -4,6 +4,14 @@ from django.conf.urls.defaults import *
 from django.contrib import admin
 admin.autodiscover()
 
+'''
+from django import template
+register = template.Library()
+@register.filter
+def transto(value):
+    return _(value)
+'''
+
 urlpatterns = patterns('',
     # Example:
     # (r'^webblog/', include('webblog.foo.urls')),

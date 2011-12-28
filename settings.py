@@ -1,4 +1,6 @@
+#-*- coding:utf-8 -*-
 # Django settings for webblog project.
+import os.path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -23,11 +25,17 @@ DATABASE_PORT = '3306'             # Set to empty string for default. Not used w
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
-
+#TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Shanghai'
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
+
+LANGUAGE_CODE = 'zh-cn' # 添加默认语言
+LANGUAGES = (
+    ('en', u'English'),
+    ('zh-cn', u'中文'), # settings.py 中的语言必须用 zh-cn，否则会出现不能切换语言的毛病。
+)
 
 SITE_ID = 1
 
@@ -68,8 +76,10 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'webblog.urls'
 
-TEMPLATE_DIRS = ('D:/pworkspace/webblog/templates',)
-
+#TEMPLATE_DIRS = ('D:/pworkspace/webblog/templates',)
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
+)
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
