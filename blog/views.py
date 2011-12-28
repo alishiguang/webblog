@@ -1,7 +1,8 @@
 # Create your views here.
+
+
 from webblog.blog.models import *
 from django.core.paginator import Paginator,InvalidPage,EmptyPage,PageNotAnInteger
-
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
@@ -16,10 +17,11 @@ def register(request):
         form = UserCreationForm()
     return render_to_response('register.html', {'form':form})
 
-
 def index(request):
-    after_range_num = 5
-    before_range_num = 4
+
+    before_range_num = 1
+    after_range_num = 1
+
     try:
         page = int(request.GET.get('page', '1'))
     except ValueError:
