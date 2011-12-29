@@ -22,4 +22,4 @@ class Article(models.Model):
         verbose_name_plural = '文章'
 
     def __unicode__(self):
-        return '%s %s' % (self.headline,self.article)
+        return '%s' % (self.headline)
