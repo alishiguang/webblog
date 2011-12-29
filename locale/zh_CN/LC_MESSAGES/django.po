@@ -18,9 +18,9 @@ msgstr ""
 
 #: .\templates\admin\base_site.html.py:4
 msgid "Django site admin"
-msgstr "AAA"
+msgstr "后台管理"
 
 #: .\templates\admin\base_site.html.py:7
 msgid "Django administration"
-msgstr "BBB"
+msgstr "G后台管理"
 
