@@ -31,10 +31,10 @@ TIME_ZONE = 'Asia/Shanghai'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 #LANGUAGE_CODE = 'en-us'
 
-LANGUAGE_CODE = 'zh-cn' # 添加默认语言
+LANGUAGE_CODE = 'zh-CN' # 添加默认语言
 LANGUAGES = (
     ('en', u'English'),
-    ('zh-cn', u'中文'), # settings.py 中的语言必须用 zh-cn，否则会出现不能切换语言的毛病。
+    ('zh-CN', u'中文'), # settings.py 中的语言必须用 zh-cn，否则会出现不能切换语言的毛病。
 )
 
 SITE_ID = 1
